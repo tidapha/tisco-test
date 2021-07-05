@@ -1,0 +1,60 @@
+<div>
+    <input type="number" [(ngModel)]="inputOne" placeholder="InputA">
+    <input type="number" [(ngModel)]="inputTwo" placeholder="InputB">
+    <button (click)="checkOne()">check</button>
+    <button (click)="clearOne()">Clear</button>
+
+    <div *ngIf="outPutOne.length >0">
+        INPUT A: {{inputOne}}
+        <table style="border: 1px;">
+            <tr>
+                <td>INPUT B</td>
+                <td>OUTPUT</td>
+            </tr>
+            <tr *ngFor="let list of outPutOne;">
+                <td>{{ list?.inputB }}</td>
+                <td>{{ list?.output }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+<div>
+    Question inputTwo
+    <input type="number" [(ngModel)]="inputQTwo" placeholder="Input">
+
+    <button (click)="checkTwo()">check</button>
+    <div *ngIf="outPutTwo.length >0">
+        <table style="border: 1px;">
+            <tr>
+                <td>INPUT</td>
+                <td>OUTPUT</td>
+            </tr>
+            <tr *ngFor="let list of outPutTwo;">
+                <td>{{ list?.input }}</td>
+                <td>{{ list?.output }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div>
+    Question Three
+    <input type="text" [(ngModel)]="inputThree" placeholder="input">
+    <button (click)="checkThree()">check</button>
+
+    <div *ngIf="outPutTwo.length >0">
+        <table style="border: 1px;">
+            <tr>
+                <td>INPUT</td>
+                <td>OUTPUT</td>
+            </tr>
+            <tr *ngFor="let list of outPutThree;">
+                <td>{{ list?.input }}</td>
+                <td>{{ list?.output }}</td>
+            </tr>
+        </table>
+    </div>
+</div>
